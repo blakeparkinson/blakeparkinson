@@ -17,8 +17,7 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch',
-    'angularTypewrite'
+    'ngTouch'
   ])
   .config(function ($routeProvider) {
     $routeProvider
