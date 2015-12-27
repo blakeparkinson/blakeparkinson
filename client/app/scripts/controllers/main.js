@@ -8,7 +8,7 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('MainCtrl', function($scope) {
+  .controller('MainCtrl', function($scope, $anchorScroll, $location) {
       var content = "Hi I'm Blake. I'm a software engineer, a designer, and a product person.";
 
       $scope.type = "";
@@ -16,10 +16,9 @@ angular.module('clientApp')
       setInterval(function() {
         if (i < content.length) {
           $scope.type = $scope.type.replace('|', '');
-          if (i == content.length - 1){
+          if (i == content.length - 1) {
             $scope.type += content[i];
-          }
-          else{
+          } else {
             $scope.type += content[i] + '|';
 
           }
@@ -28,6 +27,14 @@ angular.module('clientApp')
         }
         $scope.$apply();
       }, 100);
+
+      $scope.scrollTo = function(id) {
+        var old = $location.hash();
+        $location.hash(id);
+        $anchorScroll();
+        //reset to old to keep any additional routing logic from kicking in
+        $location.hash(old);
+      };
     }
 
   );
