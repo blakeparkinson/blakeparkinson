@@ -66,6 +66,7 @@ body {
   color: #fff;
   text-align: center;
   position: relative;
+  font-family: Terminal Dosis;
   top: 14%;
   transform: translateY(-50%);
 }
@@ -75,11 +76,7 @@ body {
   border-radius: 50px;
   box-shadow: 1px 1px 2px 2px rgba(234,161,108,0.50);
 }
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
+
 .container-narrow > hr {
   margin: 30px 0;
 }
@@ -97,10 +94,14 @@ body {
 .third{
   background-color: #EAA16C;
   color: #fff;
-
+  padding-bottom: 20px;
 }
 .cursive {
   font-family: cursive;
+}
+
+.email{
+  margin-bottom: 20px;
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

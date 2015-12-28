@@ -16,13 +16,13 @@
 
         <ul class="nav navbar-nav">
           <li>
-            <a class="pointer" ng-click="scrollTo(skills)">Skills</a>
+            <a class="pointer" ng-click="scrollTo('skills')">Skills</a>
           </li>
           <li>
-            <a class="pointer" ng-click="scrollTo(achievements)">Achievements</a>
+            <a class="pointer" ng-click="scrollTo('achievements')">Achievements</a>
           </li>
           <li>
-            <a class="pointer" ng-click="scrollTo(info)">Info</a>
+            <a class="pointer" ng-click="scrollTo('info')">Info</a>
           </li>
         </ul>
       </div>
@@ -36,7 +36,7 @@
 <div class="jagged"></div>
 <div class="second">
   <div class="cursive container">
-    <h3>Skills</h3>
+    <h3 id="skills">Skills</h3>
     <ul>
       <li class="col-sm-12 col-lg-4 list">
         <i class="icon-javascript three-x"></i>
@@ -75,7 +75,7 @@
 </div>
 <div class="third">
   <div class="cursive container">
-    <h3>Achievements</h3>
+    <h3 id="achievements">Achievements</h3>
     <ul>
       <li class="col-sm-12 col-lg-4 list">
         <i class="icon-javascript three-x"></i>
@@ -110,5 +110,24 @@
         <div>Huge fan of NoSQL. I've worked with couchdb, mongodb, and aerospike.</div>
       </li>
     </ul>
+  </div>
+</div>
+<div class="second">
+  <div class="cursive container">
+    <h3 id="info">Contact Me</h3>
+    <ul>
+    <form name="email">
+      <div class="form-group" ng-class="{ 'has-error': userForm.email.$invalid }" >
+         <label class="control-label">Your email</label>
+        <input type="email" class="form-control email" name="email" ng-model="user.email" required />
+        <div>
+        <label class="control-label">What's up?</label>
+      </div>
+
+
+        <textarea class="form-control" ng-model="user.message"></textarea>
+      </div>
+    </form>
+  </ul>
   </div>
 </div>
