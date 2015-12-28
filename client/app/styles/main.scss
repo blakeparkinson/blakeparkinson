@@ -2,32 +2,47 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
-
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
 }
-
+.pointer {
+  cursor: pointer;
+}
 body {
   padding: 0;
   font-family: Alegreya Sans;
   color: #77797b;
 }
-
+.navbar-default {
+  background-color: #EAA16C;
+  border: none;
+  .navbar-nav > li > a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 10px 10px 5px;
+    text-align: left;
+  }
+}
+.three-x {
+  font-size: 3em;
+}
+.list {
+  text-decoration: none;
+  list-style-type: none;
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .footer {
   padding-left: 15px;
   padding-right: 15px;
 }
-
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
-
-  /* Make the masthead heading the same height as the navigation */
   h3 {
     margin-top: 0;
     margin-bottom: 0;
@@ -35,47 +50,45 @@ body {
     padding-bottom: 19px;
   }
 }
-
-.intro-row{
-  background-color:#2BB7CE;
+.intro-row {
+  background-color: #2BB7CE;
+  height: 300px;
 }
-
-.intro{
+.intro {
   font-size: 30px;
   color: #fff;
   text-align: center;
-  margin:20px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
-
 /* Custom page footer */
 .footer {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
 }
-
 .container-narrow > hr {
   margin: 30px 0;
 }
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
+.jagged {
+  background-repeat: repeat-x;
+  min-height: 14px;
+  margin-top: -14px;
+  background-image: url(/images/jagged.png);
 }
-
-
+.second {
+  background-color: #E6F5F7;
+  color: #EAA16C;
+}
+.cursive {
+  font-family: cursive;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
     max-width: 730px;
   }
-
   /* Remove the padding we set earlier */
   .header,
   .marketing,

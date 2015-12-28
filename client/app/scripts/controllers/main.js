@@ -9,7 +9,7 @@
  */
 angular.module('clientApp')
   .controller('MainCtrl', function($scope, $anchorScroll, $location) {
-      var content = "Hi I'm Blake. I'm a software engineer, a designer, and a product person.";
+      var content = "Hi I'm Blake. I'm a software engineer and a designer.";
 
       $scope.type = "";
       var i = 0;
