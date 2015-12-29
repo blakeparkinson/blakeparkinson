@@ -119,13 +119,14 @@
     <form name="email">
       <div class="form-group" ng-class="{ 'has-error': userForm.email.$invalid }" >
          <label class="control-label">Your email</label>
-        <input type="email" class="form-control email" name="email" ng-model="user.email" required />
+        <input ng-model="mailInfo.email" class="form-control email" name="email" required>
         <div>
         <label class="control-label">What's up?</label>
       </div>
 
 
-        <textarea class="form-control" ng-model="user.message"></textarea>
+        <textarea class="form-control" ng-model="mailInfo.message"></textarea>
+        <div class="btn btn-warning" ng-click="sendMail(mailInfo)">Send Message</div>
       </div>
     </form>
   </ul>
