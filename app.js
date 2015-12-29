@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var main = require('./routes/main');
 
 var app = express();
 
@@ -54,4 +54,5 @@ if (app.get('env') === 'production') {
         });
     });
 }
+app.use('/main', main);
 module.exports = app;
