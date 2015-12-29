@@ -39,22 +39,18 @@ angular.module('clientApp')
       };
 
       $scope.sendMail = function(mailInfo) {
-        $http({
-          method: 'GET',
-          url: 'email',
-          data: {
-            'sender': mailInfo.email,
-            'textBody': mailInfo.message
-          }
-        }).then(function successCallback(response) {
-          console.log(response);
-          // this callback will be called asynchronously
-          // when the response is available
-        }, function errorCallback(response) {
-          console.log(response);
-          // called asynchronously if an error occurs
-          // or server returns response with an error status.
+        var data = {
+          'sender': mailInfo.email,
+          'textBody': mailInfo.message
+        };
+        var request = $http.post('main/email',data);
+        request.success(function(data) {
+          console.log(data); // <-- changed
         });
+
+        request.error(function(data) {
+          console.log(data); // <-- changed
+        })
       };
     }
 
