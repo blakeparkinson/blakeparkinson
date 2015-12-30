@@ -45,12 +45,12 @@ angular.module('clientApp')
         };
         var request = $http.post('main/email',data);
         request.success(function(data) {
-          console.log(data); // <-- changed
+          $scope.mailInfo = {};
         });
 
         request.error(function(data) {
           console.log(data); // <-- changed
-        })
+        });
       };
     }
 
