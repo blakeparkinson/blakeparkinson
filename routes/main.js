@@ -28,8 +28,10 @@ router.post('/email', function(req,res){
       console.log(mailOptions);
         if(error){
             console.log(error);
+            res.json('error',{error: 'failed to send email'});
+
         }else{
-            console.log('Message sent: ' + info.response);
+            res.json({success: true});
         }
     });
 });
