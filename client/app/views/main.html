@@ -102,6 +102,7 @@
   <div class="container">
     <h3 class="cursive" id="info">Contact Me</h3>
     <div class="sub">I can do web development, play soccer with you, babysit your kids. Drop me a line, let's chat!</div>
+    <div ng-if="messageSent" class="bounceInLeft">Thanks for your message. I'll get back to you shortly!</div>
     <ul ng-if="!messageSent">
     <form name="email">
       <div class="form-group" ng-class="{ 'has-error': userForm.email.$invalid }" >
@@ -117,6 +118,4 @@
       </div>
     </form>
   </ul>
-  <div ng-if="messageSent" class="two-x bounceInLeft">Thanks for your message. I'll get back to you shortly!</div>
-  </div>
 </div>
