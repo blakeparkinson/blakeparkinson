@@ -45,6 +45,7 @@ body {
 }
 .sub{
   margin-bottom: 20px;
+  font-size: 18px;
 }
 /* Custom page header */
 .header {
@@ -122,6 +123,11 @@ body {
 }
 .email {
   margin-bottom: 20px;
+}
+.contact{
+  a{
+    color:inherit;
+  }
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

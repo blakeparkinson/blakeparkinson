@@ -85,9 +85,10 @@
         <div>I love javascript. I like to write front-end code in angular and backbone.</div>
       </li>
       <li class="col-sm-12 col-md-4 list achievements fonts">
-<i class="fa fa-bolt three-x"></i>
-<span class="onehalf-x">RosterBlitz</span>
-        <div>I founded <a href="https://www.rosterblitz.com">RosterBlitz</a>, the premier sports quizzing website on the internet.</div>
+        <i class="fa fa-bolt three-x"></i>
+        <span class="onehalf-x">RosterBlitz</span>
+        <div>I founded
+          <a href="https://www.rosterblitz.com">RosterBlitz</a>, the premier sports quizzing website on the internet.</div>
       </li>
       <li class="col-sm-12 col-md-4 list achievements fonts">
         <i class="fa fa-building three-x"></i>
@@ -99,23 +100,45 @@
   </div>
 </div>
 <div class="second">
-  <div class="container">
+  <div class="container contact">
     <h3 class="cursive" id="info">Contact Me</h3>
     <div class="sub">I can do web development, play soccer with you, babysit your kids. Drop me a line, let's chat!</div>
-    <div ng-if="messageSent" class="bounceInLeft">Thanks for your message. I'll get back to you shortly!</div>
+    <div class="sub">Find me here</div>
+    <ul>
+      <li class="col-sm-12 col-md-4 list ">
+        <i class="fa fa-github-alt three-x"></i>
+        <span class="onehalf-x">
+          <a href="https://www.github.com/blakeparkinson/" target="_blank">GitHub</a>
+        </span>
+      </li>
+      <li class="col-sm-12 col-md-4 list">
+        <i class="fa fa-linkedin three-x"></i>
+        <span class="onehalf-x">
+          <a href="https://www.linkedin.com/in/bparky" target="_blank">LinkedIn</a>
+        </span>
+      </li>
+      <li class="col-sm-12 col-md-4 list">
+        <i class="fa fa-facebook three-x"></i>
+        <span class="onehalf-x">
+          <a href="https://www.facebook.com/blakeparkinson" target="_blank">Facebook</a>
+        </span>
+      </li>
+    </ul>
+    <div class="sub">Send me a message</div>
+
+    <div class="bounceInLeft" ng-if="messageSent">Thanks for your message. I'll get back to you shortly!</div>
     <ul ng-if="!messageSent">
-    <form name="email">
-      <div class="form-group" ng-class="{ 'has-error': userForm.email.$invalid }" >
-         <label class="control-label">Your email</label>
-        <input ng-model="mailInfo.email" class="form-control email" name="email" required>
-        <div>
-        <label class="control-label">What's up?</label>
-      </div>
+      <form name="email">
+        <div class="form-group" ng-class="{ 'has-error': userForm.email.$invalid }">
+          <label class="control-label">Your email</label>
+          <input class="form-control email" name="email" ng-model="mailInfo.email" required>
+          <div>
+            <label class="control-label">What's up?</label>
+          </div>
 
-
-        <textarea class="form-control" ng-model="mailInfo.message"></textarea>
-        <div class="btn btn-warning" ng-click="sendMail(mailInfo)">Send Message</div>
-      </div>
-    </form>
-  </ul>
-</div>
+          <textarea class="form-control" ng-model="mailInfo.message"></textarea>
+          <div class="btn btn-warning" ng-click="sendMail(mailInfo)">Send Message</div>
+        </div>
+      </form>
+    </ul>
+  </div>
