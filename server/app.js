@@ -44,7 +44,7 @@ if (app.get('env') === 'development') {
 if (app.get('env') === 'production') {
 
     // changes it to use the optimized version for production
-    app.use(express.static(path.join(__dirname, '../server/dist')));
+    app.use(express.static(path.join(__dirname, '/dist')));
 
     // production error handler
     // no stacktraces leaked to user
