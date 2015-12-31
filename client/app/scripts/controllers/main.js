@@ -46,6 +46,7 @@ angular.module('clientApp')
         var request = $http.post('main/email',data);
         request.success(function(data) {
           $scope.mailInfo = {};
+          $scope.messageSent = true;
         });
 
         request.error(function(data) {
