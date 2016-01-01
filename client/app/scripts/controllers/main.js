@@ -8,8 +8,8 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('MainCtrl', function($scope, $anchorScroll, $location, $http) {
-    mixpanel.track('page visited');
+  .controller('MainCtrl', function($scope, $anchorScroll, $location, $http, $mixpanel) {
+    $mixpanel.track('page visited');
       var content = "Hi I'm Blake, a software engineer and designer.";
 
 
@@ -32,7 +32,7 @@ angular.module('clientApp')
       }, 100);
 
       $scope.scrollTo = function(id) {
-        mixpanel.track('topnav click');
+        $mixpanel.track('topnav click: ' + id);
         var old = $location.hash();
         $location.hash(id);
         $anchorScroll();
@@ -41,7 +41,7 @@ angular.module('clientApp')
       };
 
       $scope.sendMail = function(mailInfo) {
-        mixpanel.track('send message');
+        $mixpanel.track('send message');
         var data = {
           'sender': mailInfo.email,
           'textBody': mailInfo.message

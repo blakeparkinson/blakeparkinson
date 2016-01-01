@@ -17,9 +17,10 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'analytics.mixpanel'
   ])
-  .config(function ($routeProvider) {
+  .config(function($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -35,3 +36,8 @@ angular
         redirectTo: '/'
       });
   });
+
+angular.module('analytics.mixpanel')
+  .config(['$mixpanelProvider', function($mixpanelProvider) {
+    $mixpanelProvider.apiKey('1840988862eca86edd2dacc90144f3aa'); // your token is different than your API key
+  }]);
