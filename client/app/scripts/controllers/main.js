@@ -41,6 +41,10 @@ angular.module('clientApp')
         $location.hash(old);
       };
 
+      $scope.trackNav = function(page){
+        $mixpanel.track('navigated to: ' + page);
+      };
+
       $scope.sendMail = function(mailInfo) {
         $mixpanel.track('send message');
         var data = {
