@@ -135,8 +135,7 @@
     <div class="sub">I can do web development, play soccer with you, babysit your kids. Drop me a line, let's chat!</div>
     <div class="sub">Send me a message</div>
 
-    <div class="bounceInLeft" ng-if="messageSent">Thanks for your message. I'll get back to you shortly!</div>
-    <ul ng-if="!messageSent">
+    <ul>
       <form name="email">
         <div class="form-group" ng-class="{ 'has-error': userForm.email.$invalid }">
           <label class="control-label">Your email</label>
@@ -146,7 +145,7 @@
           </div>
 
           <textarea class="form-control" ng-model="mailInfo.message"></textarea>
-          <div class="btn btn-warning" ng-click="sendMail(mailInfo)">Send Message</div>
+          <div class="btn btn-warning" ng-click="sendMail(mailInfo)">{{sendBtn}}</div>
         </div>
       </form>
     </ul>

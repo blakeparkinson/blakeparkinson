@@ -14,6 +14,7 @@ angular.module('clientApp')
 
 
       $scope.type = "";
+      $scope.sendBtn = 'Send Message';
       $scope.mailInfo = {};
       var i = 0;
       setInterval(function() {
@@ -46,10 +47,13 @@ angular.module('clientApp')
           'sender': mailInfo.email,
           'textBody': mailInfo.message
         };
+        $scope.sendBtn = 'Sending...';
+
         var request = $http.post('main/email',data);
         request.success(function(data) {
           $scope.mailInfo = {};
           $scope.messageSent = true;
+          $scope.sendBtn = 'Send Another?';
         });
 
         request.error(function(data) {
