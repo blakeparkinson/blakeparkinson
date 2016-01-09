@@ -43,6 +43,7 @@ angular.module('clientApp')
 
       $scope.trackNav = function(page){
         $mixpanel.track('navigated to: ' + page);
+
       };
 
       $scope.sendMail = function(mailInfo) {

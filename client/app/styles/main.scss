@@ -66,7 +66,8 @@ body {
   color: #fff;
   text-align: center;
   position: relative;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;  top: 14%;
+  font-family: 'Waiting for the Sunrise', cursive;
+  top: 14%;
   transform: translateY(-50%);
   margin-right: 40px;
   margin-left: 40px;
@@ -82,7 +83,7 @@ body {
 .blake {
   width: 75px;
   margin-top: 35px;
-  border-radius: 50px;
+  border-radius: 10px;
   box-shadow: 1px 1px 2px 2px rgba(234,161,108,0.50);
 }
 .edmodo {
@@ -123,7 +124,7 @@ body {
   padding-bottom: 20px;
 }
 .cursive {
-  font-family: cursive;
+  font-family: 'Josefin Slab', serif;;
 }
 .email {
   margin-bottom: 20px;
@@ -132,6 +133,16 @@ body {
   a{
     color:inherit;
   }
+}
+.blink-me {
+  animation: blinker 1s linear infinite;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #FFFFFF !important;
+}
+
+@keyframes blinker {
+  50% { opacity: 0.0; }
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
