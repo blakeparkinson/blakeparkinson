@@ -1,0 +1,170 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "font-awesome/scss/font-awesome.scss";
+// endbower
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+.pointer {
+  cursor: pointer;
+}
+body {
+  padding: 0;
+  font-family: Alegreya Sans;
+  color: #77797b;
+}
+.navbar-default {
+  background-color: #D6451A;
+  border: none;
+  .navbar-nav > li > a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 10px 10px 5px;
+    text-align: left;
+  }
+}
+.three-x {
+  font-size: 3em !important;
+}
+.two-x {
+  font-size: 2em !important;
+}
+.onehalf-x {
+  font-size: 1.5em !important;
+}
+.list {
+  text-decoration: none;
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+.sub{
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+/* Custom page header */
+.header {
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+.intro-row {
+  background-color: #2BB7CE;
+  height: 300px;
+  text-align: center;
+}
+.intro {
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  font-family: 'Waiting for the Sunrise', cursive;
+  top: 14%;
+  transform: translateY(-50%);
+  margin-right: 40px;
+  margin-left: 40px;
+}
+.btn-warning {
+  margin-top: 15px;
+  background-color: #D6451A;
+  margin-top: 15px;
+  background-color: #2BB7CE;
+  border-color: #2E646D;
+  width: 125px;
+}
+.blake {
+  width: 75px;
+  margin-top: 35px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px 2px rgba(234,161,108,0.50);
+}
+.edmodo {
+  margin-top: 20px;
+}
+.achievements {
+  div {
+    margin-top: 10px;
+  }
+  a {
+    text-decoration: underline;
+    color: #fff;
+  }
+  &.fonts {
+    margin-top: 5px;
+  }
+}
+.edmodo-img {
+  margin-top: -20px;
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+.jagged {
+  background-repeat: repeat-x;
+  min-height: 14px;
+  margin-top: -14px;
+  background-image: url(/images/jagged.png);
+}
+.second {
+  background-color: #E6F5F7;
+  color: #D6451A;
+  padding-bottom: 20px;
+}
+.third {
+  background-color: #D6451A;
+  color: #fff;
+  padding-bottom: 20px;
+}
+.cursive {
+  font-family: 'Josefin Slab', serif;;
+}
+.email {
+  margin-bottom: 20px;
+}
+.contact{
+  a{
+    color:inherit;
+  }
+}
+.blink-me {
+  animation: blinker 1s linear infinite;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #FFFFFF !important;
+}
+
+@keyframes blinker {
+  50% { opacity: 0.0; }
+}
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .intro {
+    font-size: 20px;
+  }
+
+}
