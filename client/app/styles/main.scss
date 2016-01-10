@@ -43,7 +43,7 @@ body {
   list-style-type: none;
   margin-bottom: 20px;
 }
-.sub{
+.sub {
   margin-bottom: 20px;
   font-size: 18px;
 }
@@ -124,30 +124,47 @@ body {
   padding-bottom: 20px;
 }
 .cursive {
-  font-family: 'Josefin Slab', serif;;
+  font-family: 'Josefin Slab', serif;
 }
 .email {
   margin-bottom: 20px;
 }
-.contact{
-  a{
-    color:inherit;
+.contact {
+  a {
+    color: inherit;
   }
 }
 .blink-me {
   animation: blinker 1s linear infinite;
 }
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #FFFFFF !important;
+  background-color: #FFFFFF !important;
 }
-
+.bp-blue {
+  background-image: url(/images/bp-blue.png);
+  height: 50px;
+  margin: 0;
+  width: 7%;
+  background-size: 94%;
+  float: right;
+  display: inline-block;
+  background-repeat: no-repeat;
+}
 @keyframes blinker {
-  50% { opacity: 0.0; }
+  50% {
+    opacity: 0.0;
+  }
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
     max-width: 730px;
+  }
+  .navbar-nav {
+    padding-top: 5px;
+  }
+  .small {
+    display: none;
   }
   /* Remove the padding we set earlier */
   .header,
@@ -161,10 +178,23 @@ body {
     border-bottom: 0;
   }
 }
-
 @media screen and (max-width: 599px) {
   .intro {
     font-size: 20px;
   }
-
+}
+@media screen and (max-width: 768px) {
+  .small {
+    height: 50px;
+    margin: 0;
+    width: 9%;
+    background-size: 33px;
+    margin-top: -40px;
+    float: none;
+    display: inline-block;
+  }
+  .navbar-toggle{
+    margin-bottom: 0px;
+    margin-top: 16px;
+  }
 }
