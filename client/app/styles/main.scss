@@ -185,13 +185,14 @@ body {
 }
 @media screen and (max-width: 768px) {
   .small {
-    height: 50px;
-    margin: 0;
+    margin: 15px 15px -5px 25px;
     width: 13%;
     background-size: 33px;
-    margin-top: -40px;
     float: none;
     display: inline-block;
+  }
+  .large{
+    display: none;
   }
   .navbar-toggle{
     margin-bottom: 0px;
