@@ -18,7 +18,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'analytics.mixpanel'
+    'analytics.mixpanel',
+    'angular-svg-round-progress'
   ])
   .config(function($routeProvider, $locationProvider) {
     $routeProvider
@@ -32,10 +33,15 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/task', {
+        templateUrl: 'views/task.html',
+        controller: 'TaskCtrl',
+        controllerAs: 'task'
+      })
       .otherwise({
         redirectTo: '/'
       });
-      $locationProvider.html5Mode(true);
+      //$locationProvider.html5Mode(true);
 
   });
 

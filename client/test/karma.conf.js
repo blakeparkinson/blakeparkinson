@@ -35,6 +35,8 @@ module.exports = function(config) {
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/mixpanel/mixpanel-jslib-snippet.js',
       'bower_components/angular-mixpanel/src/angular-mixpanel.js',
+      'bower_components/angular-svg-round-progressbar/build/roundProgress.min.js',
+      'bower_components/underscore/underscore.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
@@ -47,7 +49,7 @@ module.exports = function(config) {
     ],
 
     // web server port
-    port: 8080,
+    port: 8090,
 
     // Start these browsers, currently available:
     // - Chrome
@@ -58,13 +60,14 @@ module.exports = function(config) {
     // - PhantomJS
     // - IE (only Windows)
     browsers: [
-      "PhantomJS"
+      "Chrome"
     ],
 
     // Which plugins to enable
     plugins: [
       "karma-phantomjs-launcher",
-      "karma-jasmine"
+      "karma-jasmine",
+      "karma-chrome-launcher"
     ],
 
     // Continuous Integration mode

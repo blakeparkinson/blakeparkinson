@@ -1,0 +1,48 @@
+<div class="white-bg">
+  <div class="task-body">
+    <div ng-if="selectedTab == 'chart'">
+      <div class="progress-wrapper hidden-sm hidden-xs">
+        <div class="percentage">{{chartdetails.percentage}}
+          <span>%</span>
+        </div>
+        <div animation-delay="0" animation="easeInOutQuart" bgcolor="#fff" clockwise="true" color="#45ccce" current="chartdetails.checked" duration="800" max="chartdetails.total" radius="100" responsive="false" round-progress stroke="20"></div>
+      </div>
+      <div class="progress-text hidden-md hidden-lg hidden-xl">
+        <div class="stats grey-text">
+          <span>{{chartdetails.checked}}</span>
+          <span>of</span>
+          <span>{{chartdetails.total}}</span>
+          <div class="completed">tasks completed</div>
+        </div>
+      </div>
+    </div>
+    <div class="tasks-wrapper grey-text left-text" ng-if="selectedTab == 'taskList'">
+      <div>
+      <li class="checkbox" ng-repeat="task in tasks">
+        <input id="checkbox{{$index}}" ng-checked="task.completed" ng-model="task.completed" type="checkbox">
+        <label for="checkbox{{$index}}" ng-class="{strike: task.completed}">
+          {{task.taskName}}
+        </label>
+      </li>
+    </div>
+    <form class="form-group add-task" ng-submit="addTask()">
+      <label for="usr" ng-click="toggleInput()">{{addText}}</label>
+      <div class="right" ng-show="showInput">
+        <input name="text" ng-model="taskText" type="text"/>
+        <input class="btn-primary" id="submit" type="submit" value="Submit"/>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="task-footer">
+  <ul class="list-inline nav-justified">
+    <li class="center-text hover grey-text pointer" ng-class="{selected: selectedIndex == $index}" ng-click="switchTab(tabItem, $index)" ng-repeat="tabItem in tabs">
+      <div class="element">
+        <span class="{{tabItem.icon}} icon-item"></span>
+        <p class="label-text">{{tabItem.label}}</p>
+      </div>
+    </li>
+
+  </ul>
+</div>
+</div>

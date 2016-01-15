@@ -1,0 +1,137 @@
+#task-page {
+  background-color: #E6F5F7;
+  margin-top: 40px;
+  .center-text {
+    text-align: center;
+  }
+  .right {
+    float: right;
+  }
+  .slogan {
+    font-size: 40px;
+  }
+  .white-bg {
+    background-color: #FFF;
+  }
+  .light-grey {
+    color: #7A838F;
+  }
+  .white-text {
+    color: #F1F1F2;
+  }
+  .grey-text {
+    color: #5E6D80;
+  }
+  .left-text {
+    text-align: left;
+  }
+  .pointer {
+    cursor: pointer;
+  }
+  .task-container {
+    padding: 40px 0;
+    font-family: 'Signika', sans-serif;
+    max-width: 320px;
+    border-radius: 4px;
+    .task-header {
+      padding: 20px;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      font-size: 18px;
+    }
+    .tasks-wrapper {
+      height: 100%;
+      > div {
+        height: 80%;
+        overflow-y: scroll;
+      }
+    }
+    .form-group {
+      margin-top: 20px;
+      label {
+        margin-right: 20px;
+        line-height: 2;
+        cursor: pointer;
+        color: #2AABCC;
+      }
+    }
+    .task-body {
+      height: 300px;
+      padding: 20px;
+    }
+    .task-footer {
+      background-color: #F8F9F8;
+      .list-inline {
+        margin: 0;
+        padding-left: 0;
+        li {
+          border-right: 1px solid #EFF1F4;
+          border-top: 1px solid #EFF1F4;
+          display: table-cell;
+          width: 1%;
+          &.selected {
+            border-top: none;
+            color: #2AABCC;
+          }
+        }
+      }
+      .element {
+        padding-top: 15px;
+      }
+      .label-text {
+        margin-top: 5px;
+      }
+    }
+    .strike {
+      text-decoration: line-through;
+    }
+    .progress-text {
+      margin-top: 25%;
+      .stats {
+        font-size: 50px;
+      }
+      .completed {
+        font-size: 20px;
+      }
+    }
+    .progress-wrapper {
+      position: relative;
+      padding-top: 15px;
+      .percentage {
+        top: 53%;
+        bottom: auto;
+        left: 56.5%;
+        position: absolute;
+        transform: translateY(-50%) translateX(-50%);
+        font-size: 48px;
+        color: #fff;
+        z-index: 10;
+        font-family: 'Helvetica Neue', sans-serif;
+        span {
+          position: relative;
+          top: -0.7em;
+          font-size: 50%;
+          left: -15px;
+          @extend .light-grey;
+        }
+      }
+      circle {
+        fill: #252C35;
+      }
+    }
+  }
+  .selected {
+    background-color: #FFF;
+  }
+  .icon-item {
+    font-size: 2em;
+  }
+  .hover {
+    &:hover {
+      color: #2AABCC;
+    }
+  }
+  .dark-theme {
+    background-color: #252C35;
+  }
+}
