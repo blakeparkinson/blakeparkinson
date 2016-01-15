@@ -43,13 +43,12 @@
       height: 100%;
       > div {
         height: 80%;
-        overflow-y: scroll;
+        overflow-y: auto;
       }
     }
     .form-group {
       margin-top: 20px;
       label {
-        margin-right: 20px;
         line-height: 2;
         cursor: pointer;
         color: #2AABCC;
