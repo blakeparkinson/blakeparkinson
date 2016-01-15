@@ -15,7 +15,7 @@
       link: function() {
 
       },
-      controller: function($scope) {
+      controller: function($scope, $mixpanel) {
         $scope.selectedTab = 'chart';
         $scope.selectedIndex = 0;
 
@@ -23,6 +23,7 @@
          * switchTab - handles navigation from the buttom two tabs
          */
         $scope.switchTab = function(tab, $index) {
+          $mixpanel.track('selected tab: ' + tab.tabName);
           $scope.selectedTab = tab.tabName;
           $scope.selectedIndex = $index;
           if (tab.tabName == 'chart') {
@@ -35,6 +36,7 @@
          */
         $scope.addTask = function() {
           if (this.taskText) {
+            $mixpanel.track('added task: ' + this.taskText);
             $scope.tasks.push({
               'taskName': this.taskText,
               'completed': false,
@@ -59,6 +61,7 @@
          */
 
         $scope.toggleInput = function() {
+          $mixpanel.track('toggled task input');
           $scope.showInput = !$scope.showInput ? true : false;
         };
 

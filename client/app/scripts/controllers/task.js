@@ -9,7 +9,9 @@
 (function() {
 
   angular.module('clientApp')
-    .controller('TaskCtrl', function($scope) {
+    .controller('TaskCtrl', function($scope, $mixpanel) {
+
+      $mixpanel.track('Viewing the Task Page');
 
       //Initialize our data
       $scope.tasks = [{
