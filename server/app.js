@@ -27,6 +27,13 @@ if (app.get('env') === 'development') {
     // This covers serving up the index page
     app.use(express.static(path.join(__dirname, '../client/.tmp')));
     app.use(express.static(path.join(__dirname, '../client/app')));
+    app.use('/[^\.]+$', function(req, res, next)
+    {
+      console.log(__dirname);
+
+            res.sendfile("index.html", { root: path.join(__dirname, '../client/app') });
+
+    });
 
     // Error Handling
     app.use(function(err, req, res, next) {
@@ -56,5 +63,6 @@ if (app.get('env') === 'production') {
         });
     });
 }
+
 app.use('/main', main);
 module.exports = app;
