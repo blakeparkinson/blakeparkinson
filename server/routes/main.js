@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var config = require('../config.json');
 var nodemailer = require('nodemailer');
+var cors = require('cors');
 
 // create reusable transporter object using SMTP transport
 var transporter = nodemailer.createTransport({
@@ -12,9 +13,7 @@ var transporter = nodemailer.createTransport({
     }
 });
 
-router.post('/email', function(req,res){
-  console.log(req.body);
-
+router.post('/email', cors(), function(req,res){
     var mailOptions = {
 
         from: req.body.sender, // sender address

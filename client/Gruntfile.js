@@ -6,8 +6,13 @@
 // 'test/spec/{,*/}*.js'
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
+var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
+var mountFolder = function (connect, dir) {
+  return connect.static(require('path').resolve(dir));
+};
 
 module.exports = function(grunt) {
+  var modRewrite = require('connect-modrewrite');
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
@@ -70,7 +75,7 @@ module.exports = function(grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 8500,
+      port: 8500,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
         livereload: 35729
@@ -78,36 +83,17 @@ module.exports = function(grunt) {
       livereload: {
         options: {
           open: true,
-          middleware: function(connect) {
+          middleware: function (connect) {
             return [
-              connect.static('.tmp'),
-              connect().use(
-                '/bower_components',
-                connect.static('./bower_components')
-              ),
-              connect().use(
-                '/app/styles',
-                connect.static('./app/styles')
-              ),
-              connect.static(appConfig.app)
+                modRewrite(['^[^\\.]*$ /index.html [L]']),
+                connect.static('.tmp'),
+                connect().use(
+                    '/bower_components',
+                    connect.static('./bower_components')
+                ),
+                connect.static(appConfig.app)
             ];
-          }
         }
-      },
-      test: {
-        options: {
-          port: 9001,
-          middleware: function(connect) {
-            return [
-              connect.static('.tmp'),
-              connect.static('test'),
-              connect().use(
-                '/bower_components',
-                connect.static('./bower_components')
-              ),
-              connect.static(appConfig.app)
-            ];
-          }
         }
       },
       dist: {
@@ -115,7 +101,23 @@ module.exports = function(grunt) {
           open: true,
           base: '<%= yeoman.dist %>'
         }
-      }
+      },
+      test: {
+       options: {
+         port: 9001,
+         middleware: function(connect) {
+           return [
+             connect.static('.tmp'),
+             connect.static('test'),
+             connect().use(
+               '/bower_components',
+               connect.static('./bower_components')
+             ),
+             connect.static(appConfig.app)
+           ];
+         }
+       }
+     }
     },
 
     // Make sure there are no obvious mistakes
