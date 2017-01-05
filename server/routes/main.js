@@ -35,11 +35,4 @@ router.post('/email', cors(), function(req,res){
     });
 });
 
-router.get('/', function(req, res) {
-    res.render('index', {
-        title: 'Main'
-    });
-
-});
-
 module.exports = router;
