@@ -23,8 +23,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 
-app.use('/', routes);
-app.use('/main', main);
 /**
  * Development Settings
  */
@@ -72,5 +70,8 @@ if (app.get('env') === 'production') {
         });
     });
 }
+
+app.use('/', routes);
+app.use('/main', main);
 
 module.exports = app;
