@@ -9,13 +9,12 @@ var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
         user: config.gmail_un || process.env.email_un,
-        pass: process.env.email_pw 
+        pass: process.env.email_pw
     }
 });
 
 router.post('/email', cors(), function(req,res){
     var mailOptions = {
-
         from: req.body.sender, // sender address
         to: 'wizardplow@gmail.com', // list of receivers
         subject: 'from: '+ req.body.sender, // Subject line
