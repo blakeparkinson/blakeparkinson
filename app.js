@@ -6,11 +6,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var gzippo = require('gzippo');
+var cors = require('cors');
+
 
 var routes = require('./routes/index');
 var main = require('./routes/main');
 
 var app = express();
+app.use(cors());
+
 
 
 app.use(favicon());
