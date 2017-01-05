@@ -14,6 +14,7 @@ var transporter = nodemailer.createTransport({
 });
 
 router.post('/email', cors(), function(req,res){
+  console.log(process.env.email_pw);
     var mailOptions = {
         from: req.body.sender, // sender address
         to: 'wizardplow@gmail.com', // list of receivers
