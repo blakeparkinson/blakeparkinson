@@ -25,7 +25,6 @@ router.post('/email', function(req,res){
 
     // send mail with defined transport object
     transporter.sendMail(mailOptions, function(error, info){
-      console.log(mailOptions);
         if(error){
             console.log(error);
             res.json('error',{error: 'failed to send email'});

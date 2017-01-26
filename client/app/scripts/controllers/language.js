@@ -20,7 +20,10 @@
           vm.responseText = 'You did not enter any characters';
           return;
         }
-        var request = $http.post('main/detect',vm.settings);
+        var data = {
+          languageString: vm.settings.languageString
+        };
+        var request = $http.post('main/detect', data);
         request.success(function(data) {
           console.log(data);
         });
