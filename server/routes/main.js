@@ -17,6 +17,8 @@ var transporter = nodemailer.createTransport({
 });
 
 router.post('/email', cors(), function(req,res){
+  console.log(req);
+
     var mailOptions = {
 
         from: req.body.sender, // sender address
@@ -27,7 +29,6 @@ router.post('/email', cors(), function(req,res){
 
     // send mail with defined transport object
     transporter.sendMail(mailOptions, function(error, info){
-      console.log(mailOptions);
         if(error){
             console.log(error);
             res.json('error',{error: 'failed to send email'});
@@ -39,7 +40,7 @@ router.post('/email', cors(), function(req,res){
 });
 
 router.post('/detect', cors(), function(req,res){
-  console.log(req.body);
+  console.log(req);
   var detectedLanguages = lngDetector.detect(req.body.languageString);
   res.json(detectedLanguages);
 });
