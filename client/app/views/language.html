@@ -2,4 +2,5 @@
   <h3>Enter a string:</h3>
   <textarea class="form-control" ng-model="vm.settings.languageString"></textarea>
   <div class="btn btn-warning" ng-click="vm.getLanugage()">Guess Language</div>
+  <div ng-if="vm.responseHtml" ng-bind-html="vm.responseHtml"></div>
 </div>

@@ -17,7 +17,6 @@ var transporter = nodemailer.createTransport({
 });
 
 router.post('/email', cors(), function(req,res){
-  console.log(req.body);
 
     var mailOptions = {
 
@@ -40,9 +39,7 @@ router.post('/email', cors(), function(req,res){
 });
 
 router.post('/detect', cors(), function(req,res){
-  console.log(req.body);
-  var detectedLanguages = lngDetector.detect(req.body.languageString);
-  console.log(detectedLanguages);
+  var detectedLanguages = lngDetector.detect(req.body.languageString, 2);
   res.json(detectedLanguages);
 });
 

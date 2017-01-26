@@ -17,7 +17,7 @@
 
       vm.getLanugage = function(){
         if (!vm.settings.languageString.length){
-          vm.responseText = 'You did not enter any characters';
+          vm.responseHtml = '<div>You did not enter any characters</div>';
           return;
         }
         var data = {
@@ -25,7 +25,7 @@
         };
         var request = $http.post('main/detect', data);
         request.success(function(data) {
-          console.log(data);
+          vm.responseHtml = '<div>This language looks likes <b>' + data[0][0] + '</b></div>';
         });
       }
 
