@@ -25,7 +25,12 @@
         };
         var request = $http.post('main/detect', data);
         request.success(function(data) {
-          vm.responseHtml = '<div>This language looks likes <b>' + data[0][0] + '</b></div>';
+          if (data[0]){
+            vm.responseHtml = '<div>This language looks likes <b>' + data[0][0] + '</b></div>';
+          }
+          else{
+            vm.responseHtml = '<div>Sorry. We were not able to match your language</div>';
+          }
         });
       }
 
