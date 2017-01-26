@@ -12,7 +12,7 @@
     .controller('LanguageCtrl', function($scope, $http) {
       var vm = this;
       vm.settings = {
-        lanugageString: ''
+        languageString: ''
       };
 
       vm.getLanugage = function(){
