@@ -3,19 +3,22 @@ var router = express.Router();
 var config = require('../config.json');
 var nodemailer = require('nodemailer');
 var cors = require('cors');
+var LanguageDetect = require('languagedetect');
+var lngDetector = new LanguageDetect();
+
 
 // create reusable transporter object using SMTP transport
 var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
         user: config.gmail_un || process.env.email_un,
-        pass: process.env.email_pw
+        pass: config.gmail_pw || process.env.email_pw
     }
 });
 
 router.post('/email', cors(), function(req,res){
-  console.log(process.env.email_pw);
     var mailOptions = {
+
         from: req.body.sender, // sender address
         to: 'wizardplow@gmail.com', // list of receivers
         subject: 'from: '+ req.body.sender, // Subject line
@@ -33,6 +36,11 @@ router.post('/email', cors(), function(req,res){
             res.json({success: true});
         }
     });
+});
+
+router.post('/detect', cors(), function(req,res){
+  var detectedLanguages = lngDetector.detect(req.body.languageString);
+  res.json(detectedLanguages);
 });
 
 module.exports = router;

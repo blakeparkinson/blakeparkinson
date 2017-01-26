@@ -41,6 +41,8 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "compass": "^0.1.1"
+    "compass": "^0.1.1",
+    "connect-modrewrite": "^0.9.0",
+    "grunt-contrib-livereload": "^0.1.2"
   }
 }

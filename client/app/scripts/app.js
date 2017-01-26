@@ -38,6 +38,11 @@ angular
         controller: 'TaskCtrl',
         controllerAs: 'task'
       })
+      .when('/language', {
+        templateUrl: 'views/language.html',
+        controller: 'LanguageCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({
         redirectTo: '/'
       });
