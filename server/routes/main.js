@@ -39,6 +39,7 @@ router.post('/email', cors(), function(req,res){
 });
 
 router.post('/detect', cors(), function(req,res){
+  console.log(req.body);
   var detectedLanguages = lngDetector.detect(req.body.languageString);
   res.json(detectedLanguages);
 });
