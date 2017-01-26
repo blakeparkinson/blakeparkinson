@@ -16,7 +16,7 @@
       };
 
       vm.getLanugage = function(){
-        if (!vm.settings.lanugageString.length){
+        if (!vm.settings.languageString.length){
           vm.responseText = 'You did not enter any characters';
           return;
         }
