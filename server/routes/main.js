@@ -41,12 +41,13 @@ router.post('/email', cors(), function(req,res){
 });
 
 router.post('/detect', cors(), function(req,res){
+  console.log(req);
   console.log('string: ' + req.body.languageString);
   var detectedLanguage = franc(req.body.languageString, {'minLength': 3});
   console.log('single lang: ');
   console.log(detectedLanguage);
   console.log('all lang: ');
-  fran.all(req.body.languageString, {'minLength': 3});
+  franc.all(req.body.languageString, {'minLength': 3});
   res.json(detectedLanguage);
 });
 
