@@ -26,7 +26,7 @@
         var request = $http.post('main/detect', data);
         request.success(function(data) {
           if (data){
-            vm.responseHtml = '<div>This language looks likes <b>' + data + '</b></div>';
+            vm.responseHtml = '<div>This language looks like<b>' + data + '</b></div>';
           }
           else{
             vm.responseHtml = '<div>Sorry. We were not able to match your language</div>';

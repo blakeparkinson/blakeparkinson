@@ -42,6 +42,7 @@ router.post('/email', cors(), function(req,res){
 
 router.post('/detect', cors(), function(req,res){
   var detectedLanguage = franc(req.body.languageString);
+  
   console.log(detectedLanguage);
   res.json(detectedLanguage);
 });
