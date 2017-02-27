@@ -5,6 +5,8 @@ var nodemailer = require('nodemailer');
 var cors = require('cors');
 var LanguageDetect = require('languagedetect');
 var lngDetector = new LanguageDetect();
+var franc = require('franc');
+
 
 
 // create reusable transporter object using SMTP transport
@@ -39,8 +41,9 @@ router.post('/email', cors(), function(req,res){
 });
 
 router.post('/detect', cors(), function(req,res){
-  var detectedLanguages = lngDetector.detect(req.body.languageString, 2);
-  res.json(detectedLanguages);
+  var detectedLanguage = franc(req.body.languageString);
+  console.log(detectedLanguage);
+  res.json(detectedLanguage);
 });
 
 module.exports = router;
