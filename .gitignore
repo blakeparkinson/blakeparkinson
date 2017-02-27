@@ -2,3 +2,5 @@
 config.json
 
 *.log
+
+server/npm-debug.log

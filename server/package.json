@@ -9,15 +9,16 @@
   "dependencies": {
     "body-parser": "~1.0.0",
     "cookie-parser": "~1.0.1",
+    "cors": "^2.8.1",
     "debug": "~0.7.4",
     "express": "^4.2.0",
-    "cors": "^2.8.1",
+    "franc": "^2.0.0",
     "gzippo": "^0.2.0",
+    "languagedetect": "https://github.com/FGRibreau/node-language-detect#master",
     "morgan": "^1.0.1",
     "newrelic": "^1.24.0",
     "nodemailer": "^1.11.0",
     "nodemon": "^1.8.1",
-    "static-favicon": "~1.0.0",
-    "languagedetect": "https://github.com/FGRibreau/node-language-detect#master"
+    "static-favicon": "~1.0.0"
   }
 }
