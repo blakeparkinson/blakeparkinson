@@ -24,9 +24,9 @@
           languageString: vm.settings.languageString
         };
         var request = $http.post('main/detect', data);
-        request.success(function(data) {
-          if (data){
-            vm.responseHtml = '<div>This language looks like<b>' + data + '</b></div>';
+        request.success(function(data2) {
+          if (data2){
+            vm.responseHtml = '<div>This language looks like<b>' + data2 + '</b></div>';
           }
           else{
             vm.responseHtml = '<div>Sorry. We were not able to match your language</div>';
